@@ -1,0 +1,3 @@
+found primer binding site mismatch: nCoV-2019_7_RIGHT
+found primer binding site mismatch: nCoV-2019_44_RIGHT
+found primer binding site mismatch: nCoV-2019_73_LEFT

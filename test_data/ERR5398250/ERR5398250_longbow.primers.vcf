@@ -1,0 +1,10 @@
+##fileformat=VCFv4.1
+##medaka_version=1.11.3
+##INFO=<ID=Pool,Number=1,Type=String,Description="The pool name">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Medaka genotype.">
+##FORMAT=<ID=GQ,Number=1,Type=Integer,Description="Medaka genotype quality score">
+##contig=<ID=MN908947.3,length=29903>
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	SAMPLE
+MN908947.3	2269	.	A	T	37.972	PASS	Pool=nCoV-2019_1	GT:GQ	1:38
+MN908947.3	13390	.	G	GC	6.8	PASS	Pool=nCoV-2019_2	GT:GQ	1:7
+MN908947.3	21990	.	TTTA	T	82.595	PASS	Pool=nCoV-2019_1	GT:GQ	1:83

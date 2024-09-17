@@ -1,0 +1,23 @@
+minimap2 -a -x map-ont -t 16 /public/share/mzj22/ONT_ML/ncov2019/ref/nCoV-2019/V3/nCoV-2019.reference.fasta /public/share/mzj22/ONT_ML/ncov2019/data/reads/ERR5398250.fastq | samtools view -bS -F 4 - | samtools sort -o ERR5398250_longbow.sorted.bam -	1.293797604739666
+samtools index ERR5398250_longbow.sorted.bam	0.05501547083258629
+align_trim --normalise 100 /public/share/mzj22/ONT_ML/ncov2019/ref/nCoV-2019/V3/nCoV-2019.scheme.bed --start --remove-incorrect-pairs --report ERR5398250_longbow.alignreport.txt < ERR5398250_longbow.sorted.bam 2> ERR5398250_longbow.alignreport.er | samtools sort -T ERR5398250_longbow - -o ERR5398250_longbow.trimmed.rg.sorted.bam	2.8145619593560696
+align_trim --normalise 100 /public/share/mzj22/ONT_ML/ncov2019/ref/nCoV-2019/V3/nCoV-2019.scheme.bed --remove-incorrect-pairs --report ERR5398250_longbow.alignreport.txt < ERR5398250_longbow.sorted.bam 2> ERR5398250_longbow.alignreport.er | samtools sort -T ERR5398250_longbow - -o ERR5398250_longbow.primertrimmed.rg.sorted.bam	1.9022250678390265
+samtools index ERR5398250_longbow.trimmed.rg.sorted.bam	0.17404090240597725
+samtools index ERR5398250_longbow.primertrimmed.rg.sorted.bam	0.1478101760149002
+medaka consensus --model r941_min_high_g360 --threads 16 --chunk_len 800 --chunk_ovlp 400 --RG nCoV-2019_2 ERR5398250_longbow.trimmed.rg.sorted.bam ERR5398250_longbow.nCoV-2019_2.hdf	81.56475569680333
+medaka variant /public/share/mzj22/ONT_ML/ncov2019/ref/nCoV-2019/V3/nCoV-2019.reference.fasta ERR5398250_longbow.nCoV-2019_2.hdf ERR5398250_longbow.nCoV-2019_2.vcf	0.5931576546281576
+medaka consensus --model r941_min_high_g360 --threads 16 --chunk_len 800 --chunk_ovlp 400 --RG nCoV-2019_1 ERR5398250_longbow.trimmed.rg.sorted.bam ERR5398250_longbow.nCoV-2019_1.hdf	81.19789701886475
+medaka variant /public/share/mzj22/ONT_ML/ncov2019/ref/nCoV-2019/V3/nCoV-2019.reference.fasta ERR5398250_longbow.nCoV-2019_1.hdf ERR5398250_longbow.nCoV-2019_1.vcf	0.6794702708721161
+artic_vcf_merge ERR5398250_longbow /public/share/mzj22/ONT_ML/ncov2019/ref/nCoV-2019/V3/nCoV-2019.scheme.bed 2> ERR5398250_longbow.primersitereport.txt nCoV-2019_2:ERR5398250_longbow.nCoV-2019_2.vcf nCoV-2019_1:ERR5398250_longbow.nCoV-2019_1.vcf	0.44741418957710266
+bgzip -f ERR5398250_longbow.merged.vcf	0.056515851989388466
+tabix -f -p vcf ERR5398250_longbow.merged.vcf.gz	0.004186108708381653
+longshot -P 0 -F -A --no_haps --bam ERR5398250_longbow.primertrimmed.rg.sorted.bam --ref /public/share/mzj22/ONT_ML/ncov2019/ref/nCoV-2019/V3/nCoV-2019.reference.fasta --out ERR5398250_longbow.merged.vcf --potential_variants ERR5398250_longbow.merged.vcf.gz	0.4548363406211138
+artic_vcf_filter --medaka ERR5398250_longbow.merged.vcf ERR5398250_longbow.pass.vcf ERR5398250_longbow.fail.vcf	0.5686485525220633
+bgzip -f ERR5398250_longbow.pass.vcf	0.01756601221859455
+tabix -p vcf ERR5398250_longbow.pass.vcf.gz	0.026749225333333015
+artic_make_depth_mask --store-rg-depths /public/share/mzj22/ONT_ML/ncov2019/ref/nCoV-2019/V3/nCoV-2019.reference.fasta ERR5398250_longbow.primertrimmed.rg.sorted.bam ERR5398250_longbow.coverage_mask.txt	6.3059024550020695
+artic_mask /public/share/mzj22/ONT_ML/ncov2019/ref/nCoV-2019/V3/nCoV-2019.reference.fasta ERR5398250_longbow.coverage_mask.txt ERR5398250_longbow.fail.vcf ERR5398250_longbow.preconsensus.fasta	0.4883436746895313
+bcftools consensus -f ERR5398250_longbow.preconsensus.fasta ERR5398250_longbow.pass.vcf.gz -m ERR5398250_longbow.coverage_mask.txt -o ERR5398250_longbow.consensus.fasta	0.0443012285977602
+artic_fasta_header ERR5398250_longbow.consensus.fasta "ERR5398250_longbow/ARTIC/medaka"	0.27069688588380814
+cat ERR5398250_longbow.consensus.fasta /public/share/mzj22/ONT_ML/ncov2019/ref/nCoV-2019/V3/nCoV-2019.reference.fasta > ERR5398250_longbow.muscle.in.fasta	0.0016165841370821
+muscle -in ERR5398250_longbow.muscle.in.fasta -out ERR5398250_longbow.muscle.out.fasta	14.121645143255591
