@@ -36,6 +36,13 @@ bash test.sh;
 The result will be in `test_data/artex_output_ERR5398250`.
 
 ## Usage:
+There parameters are mandatory:
+| Parameters | Explaination |
+|:---:|:---:|
+|`-i` / `--input`  | Path to the Artic pipeline output directory |
+|`-o` / `--output` | Output directory |
+|`-c` / `--config` | Basecalling configuration, predcited by LongBow, options: [R9G2, R9G4, R9G6] |
+
 ```
 Usage: ./artex [OPTIONS]
 Usage: python artex.py [OPTIONS]
@@ -43,11 +50,11 @@ Usage: python artex.py [OPTIONS]
 Options:
   -i, --input TEXT        Path to the Artic pipeline output directory  [REQUIRED]
   -o, --output TEXT       Output directory [REQUIRED]
-  -p, --prefix TEXT       Output prefix [DEFAULT: clair3]
+  -p, --prefix TEXT       Output prefix for Clair3 [DEFAULT: clair3]
   -c, --config TEXT       Basecalling configuration, predcited by LongBow, options: [R9G2, R9G4, R9G6]  [REQUIRED]
   -w, --work TEXT         Workding directory, for storing intermediate results [DEFAULT: SAME AS OUTPUT]
   -r, --ref TEXT          Reference file [DEFAULT: ./ref/nCoV-2019/V3/nCoV-2019.reference.fasta]
-  -m, --model TEXT        Path to clair3 model [DEFAULT: ./clair3_model]
+  -m, --model TEXT        Path to Clair3 model [DEFAULT: ./clair3_model]
   -t, --threads INTEGER   Parallel threads for Clair3 [DEFAULT: 12]
   --chunk_size INTEGER    Chuck size for Clair3 [DEFAULT: 2000]
   --min_coverage INTEGER  Minimum coverage required to call a variant in Clair3 [DEFAULT: 10]
