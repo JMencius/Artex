@@ -41,18 +41,16 @@ Usage: ./artex [OPTIONS]
 Usage: python artex.py [OPTIONS]
 
 Options:
-  -i, --input TEXT        Path to the Artic pipeline output directory
-  -o, --output TEXT       Output directory
-  -p, --prefix TEXT       Output prefix
-  -c, --config TEXT       Basecalling configuration, predcited by LongBow,
-                          options: [R9G2, R9G4, R9G6]
-  -w, --work TEXT         Workding directory, for storing intermediate results
-  -r, --ref TEXT          Reference file
-  -m, --model TEXT        Path to clair3 model
-  -t, --threads INTEGER   Parallel threads for Clair3
-  --chunk_size INTEGER    Chuck size for Clair3
-  --min_coverage INTEGER  Minimum coverage required to call a variant in
-                          Clair3
+  -i, --input TEXT        Path to the Artic pipeline output directory  [REQUIRED]
+  -o, --output TEXT       Output directory [REQUIRED]
+  -p, --prefix TEXT       Output prefix [DEFAULT: clair3]
+  -c, --config TEXT       Basecalling configuration, predcited by LongBow, options: [R9G2, R9G4, R9G6]  [REQUIRED]
+  -w, --work TEXT         Workding directory, for storing intermediate results [DEFAULT: SAME AS OUTPUT]
+  -r, --ref TEXT          Reference file [DEFAULT: ./ref/nCoV-2019/V3/nCoV-2019.reference.fasta]
+  -m, --model TEXT        Path to clair3 model [DEFAULT: ./clair3_model]
+  -t, --threads INTEGER   Parallel threads for Clair3 [DEFAULT: 12]
+  --chunk_size INTEGER    Chuck size for Clair3 [DEFAULT: 2000]
+  --min_coverage INTEGER  Minimum coverage required to call a variant in Clair3 [DEFAULT: 10]
   --test                  Run test for the current environment
   --verbose               Verbose mode, print progress to Stdout
   --version               Show the version and exit.
