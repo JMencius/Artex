@@ -5,7 +5,7 @@ Artex is a software tool designed for re-calling variants at low-coverage or low
 
 
 ## Installation 
-Artex can operate in most modern operation system with Python 3.7+ environment. 
+Artex can operate in most modern operation system with Python environment. 
 
 ### Option 1.  Build an conda virtural environment
 The `artex.yaml` file is also included in the release, which you can recreate the author's python environment using the following command.
@@ -43,6 +43,8 @@ There parameters are mandatory:
 |`-o` / `--output` | Output directory |
 |`-c` / `--config` | Basecalling configuration, predcited by LongBow, options: [R9G2, R9G4, R9G6] |
 
+
+Full parameters
 ```
 Usage: ./artex [OPTIONS]
 Usage: python artex.py [OPTIONS]
