@@ -2,7 +2,7 @@
 
 all_params="$@";
 
-echo "$all_params"
+## echo "$all_params"
 
 current_path="$(dirname "$(realpath "$0")")"
 ##echo "$current_path"
