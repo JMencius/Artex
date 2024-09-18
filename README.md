@@ -20,7 +20,7 @@ conda activate artex;
 conda config --add channels defaults;
 conda config --add channels bioconda;
 conda config --add channels conda-forge;
-conda install -c bioconda artex;
+conda install -c bioconda clair3;
 conda install -c bioconda bcftools;
 pip install click;
 ```
