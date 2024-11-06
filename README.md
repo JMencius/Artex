@@ -5,7 +5,7 @@ Artex is a software tool designed for re-calling variants at low-coverage or low
 
 
 ## Installation 
-Artex can operate in most modern operation system with Python environment. 
+Artex is compatible with most modern operating systems that support a Python environment. However, only the _Linux_ operating system has been tested, and its use is recommended.
 
 ### Option 1.  Build an conda virtural environment
 The `artex.yaml` file is also included in the release, which you can recreate the author's python environment using the following command.
