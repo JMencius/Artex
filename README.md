@@ -1,7 +1,7 @@
-# Artex - Artic pipeline extension
+# Artex - <u>Art</u>ic <u>ex</u>tension
 
 ## Introduction
-Artex is a software tool designed for re-calling variants at low-coverage or low-quality sites which are often not considered or filtered out in the original `ARTIC pipeline`. It utilizes the amplicon mode of `Clair3` for re-variant calling. Variants are recovered by intersecting the FAIL.vcf results from the ARTIC pipeline with the Clair3 output. Those variant can be of great importance, which can exist in the `S-gene`, such as the example provide in `test_data/ERR5398250`
+Artex is a software tool designed for re-calling variants at low-coverage or low-quality sites which are often not considered or filtered out in the original `ARTIC pipeline`. It utilizes the amplicon mode of `Clair3` for re-variant calling. Variants are recovered by intersecting the `FAIL.vcf` results from the `ARTIC pipeline` with the Clair3 output. Those variant can be of great importance, which can exist in the `S-gene`, such as the example provide in `test_data/ERR5398250`
 
 
 ## Installation 
@@ -35,6 +35,7 @@ bash test.sh;
 ```
 The result will be in `test_data/artex_output_ERR5398250`.
 
+
 ## Usage:
 There parameters are mandatory:
 | Parameters | Explaination |
@@ -65,3 +66,4 @@ Options:
   --version               Show the version and exit.
   --help                  Show this message and exit.
 ```
+
