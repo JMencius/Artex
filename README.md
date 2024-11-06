@@ -24,7 +24,10 @@ conda install -c bioconda clair3;
 conda install -c bioconda bcftools;
 pip install click;
 ```
+<mark>You may have to change the file permissions to execute it with `chmod +x artex`</mark>
 
+
+## Installation test
 After installation, you can test the installation with:
 ```bash
 ./artic --test;
@@ -37,7 +40,7 @@ The result will be in `test_data/artex_output_ERR5398250`.
 
 
 ## Usage:
-There parameters are mandatory:
+Three parameters are mandatory:
 | Parameters | Explaination |
 |:---:|:---:|
 |`-i` / `--input`  | Path to the Artic pipeline output directory |
@@ -45,7 +48,7 @@ There parameters are mandatory:
 |`-c` / `--config` | Basecalling configuration, predcited by LongBow, options: [R9G2, R9G4, R9G6] |
 
 
-Full parameters
+Artex full parameters
 ```
 Usage: ./artex [OPTIONS]
 Usage: python artex.py [OPTIONS]
@@ -66,4 +69,7 @@ Options:
   --version               Show the version and exit.
   --help                  Show this message and exit.
 ```
+## Performace
+Artex is expected to finish analysis of extra variant from the results of Artic pipeline with minutes using 12 threads.
+
 
