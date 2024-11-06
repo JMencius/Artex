@@ -1,14 +1,14 @@
 # Artex - <u>Art</u>ic <u>ex</u>tension
 
 ## Introduction
-Artex is a software tool designed for re-calling variants at low-coverage or low-quality sites which are often not considered or filtered out in the original `ARTIC pipeline`. It utilizes the amplicon mode of `Clair3` for re-variant calling. Variants are recovered by intersecting the `FAIL.vcf` results from the `ARTIC pipeline` with the Clair3 output. Those variant can be of great importance, which can exist in the `S-gene`, such as the example provide in `test_data/ERR5398250`.
+Artex is a software tool designed for re-calling variants at low-coverage or low-quality sites which are often not considered or filtered out in the original `ARTIC pipeline`. It utilizes the amplicon mode of `Clair3` for re-variant calling. Variants are recovered by intersecting the `FAIL.vcf` results from the `ARTIC pipeline` with the Clair3 output. Those variants can be of great importance, which can exist in the `S-gene`, such as the example provided in `test_data/ERR5398250`.
 
 
 ## Installation 
-Artex is compatible with most modern operating systems that support a Python environment. However, only the _Linux_ operating system has been tested, and its use is recommended.
+Artex is compatible with most modern operating system that support a Python environment. However, only the _Linux_ operating system has been tested, and its use is recommended.
 
 ### Option 1.  Build an conda virtural environment
-The `artex.yaml` file is also included in the release, which you can recreate the author's python environment using the following command.
+The `artex.yaml` file is included in the release.
 ```bash
 conda env create -f artex.yaml;
 ```
@@ -57,8 +57,8 @@ Options:
   -i, --input TEXT        Path to the Artic pipeline output directory  [REQUIRED]
   -o, --output TEXT       Output directory [REQUIRED]
   -p, --prefix TEXT       Output prefix for Clair3 [DEFAULT: clair3]
-  -c, --config TEXT       Basecalling configuration, predcited by LongBow, options: [R9G2, R9G4, R9G6]  [REQUIRED]
-  -w, --work TEXT         Workding directory, for storing intermediate results [DEFAULT: SAME AS OUTPUT]
+  -c, --config TEXT       Basecalling configuration, predicted by LongBow, options: [R9G2, R9G4, R9G6]  [REQUIRED]
+  -w, --work TEXT         Working directory, for storing intermediate results [DEFAULT: SAME AS OUTPUT]
   -r, --ref TEXT          Reference file [DEFAULT: ./ref/nCoV-2019/V3/nCoV-2019.reference.fasta]
   -m, --model TEXT        Path to Clair3 model [DEFAULT: ./clair3_model]
   -t, --threads INTEGER   Parallel threads for Clair3 [DEFAULT: 12]
@@ -69,7 +69,7 @@ Options:
   --version               Show the version and exit.
   --help                  Show this message and exit.
 ```
-## Performace
+## Performance
 For each sample, Artex is expected to finish analysis of extra variant from the results of Artic pipeline with minutes using 12 threads.
 
 
