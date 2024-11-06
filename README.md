@@ -1,7 +1,7 @@
 # Artex - <u>Art</u>ic <u>ex</u>tension
 
 ## Introduction
-Artex is a software tool designed for re-calling variants at low-coverage or low-quality sites which are often not considered or filtered out in the original `ARTIC pipeline`. It utilizes the amplicon mode of `Clair3` for re-variant calling. Variants are recovered by intersecting the `FAIL.vcf` results from the `ARTIC pipeline` with the Clair3 output. Those variant can be of great importance, which can exist in the `S-gene`, such as the example provide in `test_data/ERR5398250`
+Artex is a software tool designed for re-calling variants at low-coverage or low-quality sites which are often not considered or filtered out in the original `ARTIC pipeline`. It utilizes the amplicon mode of `Clair3` for re-variant calling. Variants are recovered by intersecting the `FAIL.vcf` results from the `ARTIC pipeline` with the Clair3 output. Those variant can be of great importance, which can exist in the `S-gene`, such as the example provide in `test_data/ERR5398250`.
 
 
 ## Installation 
@@ -24,7 +24,7 @@ conda install -c bioconda clair3;
 conda install -c bioconda bcftools;
 pip install click;
 ```
-<mark>You may have to change the file permissions to execute it with `chmod +x artex`</mark>
+<mark>You may have to change the artex file permission to execute it with chmod +x artex .</mark>
 
 
 ## Installation test
@@ -70,6 +70,6 @@ Options:
   --help                  Show this message and exit.
 ```
 ## Performace
-Artex is expected to finish analysis of extra variant from the results of Artic pipeline with minutes using 12 threads.
+For each sample, Artex is expected to finish analysis of extra variant from the results of Artic pipeline with minutes using 12 threads.
 
 
