@@ -1,0 +1,29 @@
+package:
+  name: artex
+  version: 0.2.0
+
+source:
+  path: .
+
+build:
+  number: 0
+  entry_points:
+    - artex = artex:main
+
+requirements:
+  build:
+    - python==3.9.0
+  run:
+    - python==3.9.0
+    - clair3>=1.0.10
+    - bcftools==1.14
+    - click>=8.1.7
+
+test:
+  commands:
+    - artex --version
+
+about:
+  home: https://github.com/JMencius/Artex
+  license: GPL-3.0
+  description: "Artex - Artic pipeline extension"

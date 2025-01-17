@@ -10,33 +10,15 @@ Artex is compatible with most modern operating system that support a Python envi
 ### Option 1.  Build an conda virtural environment
 The `artex.yaml` file is included in the release.
 ```bash
-conda env create -f artex.yaml;
+conda create -n artex python=3.9;
+conda install artex
 ```
-
-### Option 2. Build the environment manually
-```bash
-conda create -n artex python=3.9.0;
-conda activate artex;
-conda config --add channels defaults;
-conda config --add channels bioconda;
-conda config --add channels conda-forge;
-conda install -c bioconda clair3;
-conda install -c bioconda bcftools;
-pip install click;
-```
-<mark>You may have to change the artex file permission to execute it with chmod +x artex .</mark>
-
 
 ## Installation test
 After installation, you can test the installation with:
 ```bash
 ./artic --test;
 ```
-Or run the example test data with:
-```bash
-bash test.sh;
-```
-The result will be in `test_data/artex_output_ERR5398250`.
 
 
 ## Usage:
@@ -70,6 +52,6 @@ Options:
   --help                  Show this message and exit.
 ```
 ## Performance
-For each sample, Artex is expected to finish analysis of extra variant from the results of Artic pipeline with minutes using 12 threads.
+For each sample, Artex is expected to finish analysis of extra variant from the results of Artic pipeline within minutes using 12 threads.
 
 

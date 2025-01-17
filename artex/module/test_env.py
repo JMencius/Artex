@@ -2,7 +2,7 @@ import subprocess
 
 
 def test_env() -> None:
-# test clair3
+    # test clair3
     clair3_command = "run_clair3.sh --version"
     clair3_result = subprocess.run(clair3_command, shell = True, capture_output = True, text = True)
     if clair3_result.returncode == 0:
@@ -10,15 +10,17 @@ def test_env() -> None:
         print(f"{clair3_result.stdout}")
     else:
         print(f"FAIL Clair3 installation")
-
+    
+    # test bcftools
     bcftools_command = "bcftools --version"
-    bcftools_result = subprocess.run(clair3_command, shell = True, capture_output = True, text = True)
+    bcftools_result = subprocess.run(bcftools_command, shell = True, capture_output = True, text = True)
     if bcftools_result.returncode == 0:
         print(f"PASS bcftools check: {bcftools_command}")
         print(f"{bcftools_result.stdout}")
     else:
         print(f"FAIL bcftools installation check")
 
+    # test bgzip
     bgzip_command = "bgzip --version"
     bgzip_result = subprocess.run(bgzip_command, shell = True, capture_output = True, text = True)
     if bgzip_result.returncode == 0:
@@ -26,7 +28,8 @@ def test_env() -> None:
         print(f"{bgzip_result.stdout}")
     else:
         print(f"FAIL bgzip installation check")
-
+    
+    # test tabix
     tabix_command = "tabix --version"
     tabix_result = subprocess.run(tabix_command, shell = True, capture_output = True, text = True)
     if tabix_result.returncode == 0:
