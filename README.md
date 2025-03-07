@@ -1,11 +1,13 @@
 # Artex - **Art**ic **ex**tension
 
 ## Introduction
-Artex is a software tool designed for re-calling variants at low-coverage or low-quality sites which are often not considered or filtered out in the original `ARTIC pipeline`. It utilizes the amplicon mode of `Clair3` for re-variant calling. Variants are recovered by intersecting the `FAIL.vcf` results from the `Artic pipeline` with the Clair3 output. Those variants can be of great importance, which can exist in the `S-gene`, such as the example provided in `tests/ERR5398250`.
+Artex is a software tool designed for re-calling variants at low-coverage or low-quality sites typically missed or discarded by the `ARTIC pipeline`. In priciple, Artex utilizes the amplicon mode of `Clair3` for re-variant calling. Variants are recovered by intersecting the `FAIL.vcf` results from the `Artic pipeline` with the Clair3 output. 
+
+Extra variants found by Artex can be of great importance, which can exist in the `S-gene`, such as the example provided in `./tests/ERR5398250`.
 
 
 ## Installation 
-Artex is compatible with most modern operating system that support a Python environment. However, only the _Linux_ operating system has been tested, and its use is recommended. To install:
+Artex is compatible with most modern operating system with Python environment. However, only the _Linux_ operating system has been tested, and its use is recommended. To install:
 ```bash
 conda create -n artex python=3.9;
 conda install -c bioconda artex;
@@ -27,7 +29,7 @@ Three parameters are mandatory:
 |`-o` / `--output` | Output directory |
 |`-c` / `--config` | Basecalling configuration, predcited by LongBow, options: [R9G2, R9G4, R9G6] |
 
-If you want to call extra variant in data with R10 config, please manually specify the Clair3 model file with `-m` or `--model`.
+If you want to call extra variants in data with R10 config, please manually specify the Clair3 model file with `-m` or `--model`.
 
 
 Artex full parameters:
@@ -61,7 +63,7 @@ bash end_to_end_test.sh;
 
 
 ## Performance
-For each sample, Artex is expected to finish analysis of extra variant from the results of Artic pipeline within minutes using the default 12 threads.
+For each sample, Artex is expected to finish analysis of extra variants from the results of Artic pipeline within minutes using the default 12 threads.
 
 As a reference, for the `end-to-end` test above, the runtime on an AMD EPYC-7K62 (with 12 threads) is 21 seconds.
 
