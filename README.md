@@ -53,7 +53,7 @@ Options:
 ```
 
 ## Example and test
-We provide an example and `end-to-end` test file in [./test](./test). You can download it and test after successful installation.
+We provide an example and `end-to-end` test file in [./tests](./tests). You can download it and test after successful installation.
 
 ```bash
 bash end_to_end_test.sh;
