@@ -53,10 +53,9 @@ Options:
 ```
 
 ## Example and test
-We provide an example and `end-to-end` test file in `./test`. You can try it after successful installation.
+We provide an example and `end-to-end` test file in `./test`. You can download it and test after successful installation.
 
 ```bash
-cd ./tests;
 bash end_to_end_test.sh;
 ```
 
@@ -64,7 +63,7 @@ bash end_to_end_test.sh;
 ## Performance
 For each sample, Artex is expected to finish analysis of extra variant from the results of Artic pipeline within minutes using the default 12 threads.
 
-As a reference, for the `end-to-end` test above, the runtime on an AMD EPYC-7K62 is 21 seconds.
+As a reference, for the `end-to-end` test above, the runtime on an AMD EPYC-7K62 (with 12 threads) is 21 seconds.
 
 
 
