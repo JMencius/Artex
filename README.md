@@ -8,14 +8,14 @@ Artex is a software tool designed for re-calling variants at low-coverage or low
 Artex is compatible with most modern operating system that support a Python environment. However, only the _Linux_ operating system has been tested, and its use is recommended. To install:
 ```bash
 conda create -n artex python=3.9;
-conda install artex;
+conda install -c bioconda artex;
 ```
 
 
 ## Installation test
 After installation, you can test the environment with:
 ```bash
-artic --test;
+artex --test;
 ```
 
 
