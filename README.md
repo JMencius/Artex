@@ -1,20 +1,20 @@
 # Artex - **Art**ic **ex**tension
 
 ## Introduction
-Artex is a software tool designed for re-calling variants at low-coverage or low-quality sites typically missed or discarded by the `ARTIC pipeline`. In priciple, Artex utilizes the amplicon mode of `Clair3` for re-variant calling. Variants are recovered by intersecting the `FAIL.vcf` results from the `Artic pipeline` with the Clair3 output. 
+Artex is a software tool designed for re-calling variants at low-coverage or low-quality sites typically missed or discarded by the `ARTIC pipeline`. In priciple, Artex utilizes the amplicon mode of `Clair3` for re-variant calling. Variants are recovered by intersecting the `FAIL.vcf` results from the `Artic pipeline` with the `Clair3` output. 
 
 Extra variants found by Artex can be of great importance, which can exist in the `S-gene`, such as the example provided in `./tests/ERR5398250`.
 
 
 ## Installation 
-## Install through Bioconda
+### Install through Bioconda
 Artex is compatible with most modern operating system with Python environment. However, only the _Linux_ operating system has been tested, and its use is recommended. To install:
 ```bash
-conda create -n artex python=3.9;
+conda create -n artex python=3.9.0;
 conda install -c bioconda artex;
 ```
 
-## Installation test
+### Installation test
 After installation, you can test the environment with:
 ```bash
 artex --test;
@@ -56,7 +56,7 @@ Options:
 
 ## Example and test
 ### end-to-end test
-We provide an `end-to-end` test file in [./tests](./tests). After successfully installing the software, you can download and run the test to verify `Artex` functionality.
+We provide an `end_to_end_test.sh` test file in [./tests](./tests). After successfully installing the software, you can download and run the test to verify `Artex` functionality.
 ```
 # artex --verbose -i ${artic output folder} -o ${artex output folder} -c ${config};
 artex --verbose -i ./ERR5398250 -o ./ERR5398250_artex -c R9G4;
@@ -70,9 +70,7 @@ After running the end-to-end test, the output directory contains the following f
 | `for_merge` | Contains `0000.vcf`, which includes extra variants called by Artex | Intermediate result |
 | `sample.artex.vcf.gz` | Final Artex results, combining extra variants called by Artex with PASS variants reported by Artic | Final result |
 
-```bash
-bash end_to_end_test.sh;
-```
+
 
 
 ## Performance
