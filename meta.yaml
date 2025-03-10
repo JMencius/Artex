@@ -19,7 +19,7 @@ build:
     - artex = artex:main
 
 requirements:
-  build:
+  host:
     - python ==3.9.0
   run:
     - python ==3.9.0
