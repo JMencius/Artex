@@ -7,14 +7,14 @@ Extra variants found by Artex can be of great importance, which can exist in the
 
 
 ## Installation 
-### Option1. Install through Bioconda
+### Option 1. Install through Bioconda
 Artex is compatible with most modern operating system with Python environment. However, only the _Linux_ operating system has been tested, and its use is recommended. To install:
 ```bash
 conda create -n artex python=3.9.0;
 conda install -c bioconda artex;
 ```
 
-### Option2. Install through pre-built docker image
+### Option 2. Install through pre-built docker image
 A pre-built docker image is available at <https://hub.docker.com/repository/docker/jmencius/artex/general>
 ```bash
 docker pull jmencius/artex:0.2.0;
