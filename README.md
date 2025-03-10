@@ -7,6 +7,7 @@ Extra variants found by Artex can be of great importance, which can exist in the
 
 
 ## Installation 
+The dependency package such as `clair3` and `bcftools` are not avaiable through PyPi, so `pip install` is not supported.
 ### Option 1. Install through Bioconda
 Artex is compatible with most modern operating system with Python environment. However, only the _Linux_ operating system has been tested, and its use is recommended. To install:
 ```bash
