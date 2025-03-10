@@ -14,7 +14,7 @@ build:
   number: 0
   skip: True  # [win or osx]
   run_exports:
-    - {{ pin_subpackage('artex', max_pin="x.x") }}
+    - {{ pin_subpackage(name, max_pin="x.x") }}
   entry_points:
     - artex = artex:main
 
@@ -34,7 +34,7 @@ test:
 
 about:
   home: https://github.com/JMencius/Artex
-  license: GPL-3.0
+  license: GPL-3.0-or-later
   license_file: LICENSE
   summary: "Artex - Artic pipeline extension"
 
