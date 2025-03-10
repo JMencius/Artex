@@ -55,14 +55,20 @@ Options:
 ```
 
 ## Example and test
-### Example
-```bash
+### end-to-end test
+We provide an `end-to-end` test file in [./tests](./tests). After successfully installing the software, you can download and run the test to verify `Artex` functionality.
+```
 # artex --verbose -i ${artic output folder} -o ${artex output folder} -c ${config};
 artex --verbose -i ./ERR5398250 -o ./ERR5398250_artex -c R9G4;
 ```
-
-### end-to-end test
-We provide an `end-to-end` test file in [./tests](./tests). After successfully installing the software, you can download and run the test to verify `Artex` functionality.
+After running the end-to-end test, the output directory contains the following files and folders:
+| file/folder name | Description | Category |
+|:---:|:---:|:---:|
+| `artic.fail.vcf.gz` | compressed FAIL variant reported by artic | Intermediate result |
+| `artic.fail.vcf.gz.tbi` | Indedx file for compressed FAIL variant reported by artic | Intermediate result |
+| `clair3` | Clair3 output for re-variant calling | Intermediate result |
+| `for_merge` | Contains `0000.vcf`, which includes extra variants called by Artex | Intermediate result |
+| `sample.artex.vcf.gz` | Final Artex results, combining extra variants called by Artex with PASS variants reported by Artic | Final result |
 
 ```bash
 bash end_to_end_test.sh;
