@@ -55,7 +55,14 @@ Options:
 ```
 
 ## Example and test
-We provide an example and `end-to-end` test file in [./tests](./tests). You can download it and test after successful installation.
+### Example
+```bash
+# artex --verbose -i ${artic output folder} -o ${artex output folder} -c ${config};
+artex --verbose -i ./ERR5398250 -o ./ERR5398250_artex -c R9G4;
+```
+
+### end-to-end test
+We provide an `end-to-end` test file in [./tests](./tests). After successfully installing the software, you can download and run the test to verify `Artex` functionality.
 
 ```bash
 bash end_to_end_test.sh;
@@ -63,9 +70,7 @@ bash end_to_end_test.sh;
 
 
 ## Performance
-For each sample, Artex is expected to finish analysis of extra variants from the results of Artic pipeline within minutes using the default 12 threads.
-
-As a reference, for the `end-to-end` test above, the runtime on an AMD EPYC-7K62 (with 12 threads) is 21 seconds.
+As a reference, the end-to-end test mentioned above completes in 21 seconds on an AMD EPYC 7K62 processor (using 12 threads).
 
 
 
